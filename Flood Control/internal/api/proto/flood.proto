@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package flood_control;
+option go_package = "/flood_control";
+
+import "google/protobuf/empty.proto";
+
+// Сервис для контроля флуда
+service FloodControlService {
+  // Метод для проверки лимита запросов
+  rpc Check(CheckRequest) returns (CheckResponse) {}
+}
+
+// Запрос для проверки лимита
+message CheckRequest {
+  int64 user_id = 1;
+}
+
+// Ответ на запрос проверки лимита
+message CheckResponse {
+  bool allowed = 1;
+}

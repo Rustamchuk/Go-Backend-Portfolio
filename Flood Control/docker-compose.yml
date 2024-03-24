@@ -1,0 +1,13 @@
+version: "3.9"
+
+name: 'go-course-2023-hw8'
+services:
+  flood:
+    build:
+      dockerfile: Dockerfile
+    ports:
+      - "8085:8082"
+
+networks:
+  internal:
+    driver: bridge
